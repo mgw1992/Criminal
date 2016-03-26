@@ -35,7 +35,8 @@ public class CrimeFragment extends Fragment {
                     CharSequence s, int start, int count, int after) {
                 // This space intentionally left blank
             }
-
+            // This method is defined in the onCreateView method.
+            // The EditText objects access this method by it's ID.
             @Override
             public void onTextChanged(
                     CharSequence s, int start, int before, int count) {
