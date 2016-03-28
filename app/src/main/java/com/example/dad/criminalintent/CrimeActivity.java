@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+import android.content.Context;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -19,7 +21,16 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.util.UUID;
 import java.util.Date;
 
-public class CrimeActivity extends FragmentActivity {
+public abstract class CrimeActivity extends SingleFragmentActivity {
+
+    private static final String EXTRA_CRIME_ID =
+            "com.example.dad.android.criminalintent.crime_id";
+
+    public static Intent newIntent(Context packageContext, UUID crimeId) {
+        Intent intent = new Intent(packageContext, CrimeActivity.class);
+        intent.putExtra(EXTRA_CRIME_ID, crimeId);
+        return intent;
+    }
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -29,11 +40,6 @@ public class CrimeActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        @Override
-        protected Fragment createFragment() {
-            return new CrimeFragment();
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
@@ -52,6 +58,14 @@ public class CrimeActivity extends FragmentActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         mClient = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+    @Override
+    protected Fragment createFragment() {
+        UUID crimeId = (UUID) getIntent()
+                .getSerializableExtra(EXTRA_CRIME_ID);
+        return CrimeFragment.newInstance(crimeId);
+    }
+
 
     private void setSupportActionBar(Toolbar toolbar) {
     }
