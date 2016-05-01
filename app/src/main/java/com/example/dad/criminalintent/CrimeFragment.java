@@ -33,6 +33,7 @@ import java.util.List;
 public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";
 
+
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
 
@@ -79,7 +80,7 @@ public class CrimeFragment extends Fragment {
         return fragment;
     }
 
-    private abstract class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
+    private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
 
         private List<Crime> mCrimes;
 

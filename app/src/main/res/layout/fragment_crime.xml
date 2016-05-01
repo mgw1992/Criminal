@@ -23,7 +23,8 @@
         android:id="@+id/crime_title_label"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp"/>
+        android:layout_marginTop="41dp"
+        style="?android:listSeparatorTextViewStyle"/>
 
     <EditText
         android:id="@+id/crime_title"
