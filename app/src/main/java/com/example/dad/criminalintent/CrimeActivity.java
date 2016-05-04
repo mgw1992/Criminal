@@ -110,7 +110,7 @@ public abstract class CrimeActivity extends SingleFragmentActivity {
         mClient.disconnect();
     }
 
-    public class Crime {
+    public static class Crime {
         private UUID mId;
         private String mTitle;
         private Date mDate;

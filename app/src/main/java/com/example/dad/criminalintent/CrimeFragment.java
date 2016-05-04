@@ -109,20 +109,6 @@ public class CrimeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
-
-        mCrimeRecyclerView = (RecyclerView) view
-                .findViewById(R.id.crime_recycler_view);
-        mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        updateUI();
-
-        return view;
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         updateUI();
@@ -160,6 +146,7 @@ public class CrimeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
 
+
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
@@ -182,8 +169,8 @@ public class CrimeFragment extends Fragment {
                 // This one too
             }
 
-        });
 
+        });
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
         mDateButton.setText(mCrime.getDate().toString());
@@ -198,6 +185,8 @@ public class CrimeFragment extends Fragment {
                 mCrime.setSolved(isChecked);
             }
         });
+
+        updateUI();
 
         return v;
     }
