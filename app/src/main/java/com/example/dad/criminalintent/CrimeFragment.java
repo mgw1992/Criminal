@@ -66,8 +66,11 @@ public class CrimeFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-            startActivity(intent);
+            Toast.makeText(getActivity(),
+                    mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
+                    .show();
+            //Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            //startActivity(intent);
         }
     }
 
@@ -147,7 +150,7 @@ public class CrimeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
 
 
-        mTitleField = (EditText)v.findViewById(R.id.crime_title);
+        mTitleField = (EditText) v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
