@@ -4,7 +4,7 @@ package com.example.dad.criminalintent;
  * Created by meaganwolf on 3/28/2016.
  */
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
@@ -38,20 +38,6 @@ public class CrimeListActivity extends FragmentActivity {
 
         private RecyclerView mCrimeRecyclerView;
         private CrimeAdapter mAdapter;
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
-
-            mCrimeRecyclerView = (RecyclerView) view
-                    .findViewById(R.id.crime_recycler_view);
-            mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-            updateUI();
-
-            return view;
-        }
 
         private void updateUI() {
             CrimeLab crimeLab = CrimeLab.get(getActivity());
