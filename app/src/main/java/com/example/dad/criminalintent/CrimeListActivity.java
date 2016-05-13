@@ -34,7 +34,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
     }
 
-    public static class CrimeListFragment extends Fragment {
+    public static class CrimeListFragment extends CrimeFragment {
 
         private RecyclerView mCrimeRecyclerView;
         private CrimeAdapter mAdapter;
@@ -84,7 +84,9 @@ public class CrimeListActivity extends SingleFragmentActivity {
             public int getItemCount() {
                 return mCrimes.size();
             }
-        }
 
+
+        }
     }
+
 }
