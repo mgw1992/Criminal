@@ -22,7 +22,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.List;
 
-public class CrimeListActivity extends FragmentActivity {
+public class CrimeListActivity extends SingleFragmentActivity {
     protected Fragment createFragment() {
         return new CrimeListFragment();
     }
