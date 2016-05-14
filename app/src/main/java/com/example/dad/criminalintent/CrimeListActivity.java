@@ -37,9 +37,11 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
     }
 
-    public void  onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.list_item_crime, container, false);
+
+
+    public void onCreateView(Bundle savedInstanceState) {
+        super.onCreateView(savedInstanceState);
+        setContentView(R.layout.fragment_crime_list);
 
 
         }
