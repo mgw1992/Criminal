@@ -10,11 +10,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.AppIndex;
@@ -34,7 +37,14 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
     }
 
-    public static class CrimeListFragment extends CrimeFragment {
+    public void  onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.list_item_crime, container, false);
+
+
+        }
+
+    public static class CrimeListFragment extends Fragment {
 
         private RecyclerView mCrimeRecyclerView;
         private CrimeAdapter mAdapter;
