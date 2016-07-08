@@ -19,7 +19,7 @@ import android.widget.Toast;
 import android.content.Intent;
 import java.util.UUID;
 
-import com.example.dad.criminalintent.CrimeActivity.Crime;
+import com.example.dad.criminalintent.Crime;
 
 import java.util.List;
 

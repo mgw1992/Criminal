@@ -30,22 +30,6 @@ public class CrimeListActivity extends SingleFragmentActivity {
         return new CrimeListFragment();
     }
 
-    public void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_crime_list);
-
-    }
-
-
-
-    public void onCreateView(Bundle savedInstanceState) {
-        super.onCreateView(savedInstanceState);
-        setContentView(R.layout.fragment_crime_list);
-
-
-        }
-
     public static class CrimeListFragment extends Fragment {
 
         private RecyclerView mCrimeRecyclerView;
@@ -53,7 +37,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
         private void updateUI() {
             CrimeLab crimeLab = CrimeLab.get(getActivity());
-            List<CrimeActivity.Crime> crimes = crimeLab.getCrimes();
+            List<Crime> crimes = crimeLab.getCrimes();
 
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
@@ -72,9 +56,9 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
         private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
 
-            private List<CrimeActivity.Crime> mCrimes;
+            private List<Crime> mCrimes;
 
-            public CrimeAdapter(List<CrimeActivity.Crime> crimes) {
+            public CrimeAdapter(List<Crime> crimes) {
                 mCrimes = crimes;
             }
 
@@ -88,7 +72,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
 
             @Override
             public void onBindViewHolder(CrimeHolder holder, int position) {
-                CrimeActivity.Crime crime = mCrimes.get(position);
+                Crime crime = mCrimes.get(position);
                 holder.mTitleTextView.setText(crime.getTitle());
             }
 

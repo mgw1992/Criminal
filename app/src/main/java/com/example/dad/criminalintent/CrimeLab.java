@@ -2,7 +2,7 @@ package com.example.dad.criminalintent; /**
  * Created by meaganwolf on 3/26/2016.
  */
 
-import com.example.dad.criminalintent.CrimeActivity.Crime;
+import com.example.dad.criminalintent.Crime;
 import java.util.List;
 import android.content.Context;
 import java.util.ArrayList;
@@ -25,11 +25,11 @@ public class CrimeLab extends CrimeActivity {
     public List<Crime> getCrimes(){
             return mCrimes;
         }
-    Crime crime = new Crime();
 
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
+            Crime crime = new Crime();
             crime.setTitle("Crime #" + i);
             crime.setSolved(i % 2 == 0); // Every other one
             mCrimes.add(crime);
